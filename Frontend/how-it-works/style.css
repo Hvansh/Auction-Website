@@ -1,0 +1,178 @@
+:root {
+    --primary-color: #007bff;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --text-color: #343a40;
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.guide-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--card-background);
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+    padding: 40px 50px;
+    text-align: center;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+header .subtitle {
+    font-size: 1.1rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.steps-timeline {
+    position: relative;
+    text-align: left;
+    border-left: 3px solid #e9ecef;
+    margin-left: 35px; /* Adjusted for smaller icon */
+    padding: 20px 0;
+}
+
+.step-card {
+    position: relative;
+    margin-bottom: 30px; /* Reduced vertical space */
+    padding-left: 55px; /* Increased space for text */
+}
+
+.step-card:last-child {
+    margin-bottom: 0;
+}
+
+.step-icon {
+    position: absolute;
+    left: -36px; /* Recalculated position */
+    top: 5px; /* Adjusted vertical alignment */
+    width: 70px; /* Reduced size */
+    height: 70px; /* Reduced size */
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem; /* Reduced icon font size */
+    border: 5px solid var(--card-background);
+}
+
+.step-icon span {
+    position: absolute;
+    bottom: -8px; /* Adjusted position */
+    right: -8px; /* Adjusted position */
+    background-color: #ffc107;
+    color: var(--text-color);
+    width: 28px; /* Reduced size */
+    height: 28px; /* Reduced size */
+    border-radius: 50%;
+    font-size: 0.9rem; /* Reduced font size */
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--card-background);
+}
+
+.step-content h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    padding-top: 0; /* Removed padding */
+}
+
+.step-content p {
+    font-size: 1rem;
+    color: #495057;
+}
+
+footer {
+    margin-top: 40px;
+    border-top: 1px solid #e9ecef;
+    padding-top: 30px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.footer-text {
+    margin-top: 20px;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .guide-container {
+        padding: 20px;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    .steps-timeline {
+        margin-left: 30px; /* Adjusted for smaller icon */
+    }
+    .step-icon {
+        left: -26px; /* Recalculated for smaller icon */
+        width: 50px; /* Reduced size */
+        height: 50px; /* Reduced size */
+        font-size: 1.5rem; /* Reduced icon font size */
+    }
+    .step-icon span {
+        width: 22px; /* Reduced size */
+        height: 22px; /* Reduced size */
+        font-size: 0.7rem; /* Reduced font size */
+        bottom: -4px; /* Adjusted position */
+        right: -4px; /* Adjusted position */
+    }
+    .step-content {
+        padding-top: 0;
+    }
+    .step-content h3 {
+        padding-top: 0;
+        font-size: 1.2rem;
+    }
+}

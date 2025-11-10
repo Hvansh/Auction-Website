@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Auction - Bid on Unique Items</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">GlobalAuction</a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search for items...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="how-it-works/how-it-works.html">How It Works</a>
+                <a href="#auctions">Auctions</a>
+                <a href="#sell">Sell</a>
+                <a href="#about">About</a>
+                <!-- user-section will be dynamically populated by script.js with Login button or Avatar/Dropdown -->
+                <div id="user-section">
+                    <button class="user-button" id="login-register-btn"><i class="fas fa-user"></i> Login</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Rare & Unique Items</h1>
+            <p>Bid on antiques, collectibles, art, and more from around the world</p>
+            <div class="hero-buttons">
+                <a href="#auctions" class="btn-primary">Browse Auctions</a>
+                <a href="#sell" class="btn-secondary">Start Selling</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works-main" class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-icon-main"><i class="fas fa-user-plus"></i></div>
+                    <h3>1. Register</h3>
+                    <p>Create a free account to join the bidding.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon-main"><i class="fas fa-search-dollar"></i></div>
+                    <h3>2. Discover</h3>
+                    <p>Browse our vast collection of unique items.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon-main"><i class="fas fa-gavel"></i></div>
+                    <h3>3. Bid</h3>
+                    <p>Place your bid and watch the excitement unfold.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon-main"><i class="fas fa-trophy"></i></div>
+                    <h3>4. Win</h3>
+                    <p>Win your item and get it delivered to you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="auctions" class="featured-auctions">
+        <div class="container">
+            <h2>Featured Auctions</h2>
+            <div class="auction-grid" id="auctionGrid">
+                <!-- Auction items will be dynamically loaded here by script.js -->
+            </div>
+        </div>
+    </section>
+    
+    <section id="sell" class="sell-section">
+        <div class="container">
+            <h2>Sell Your Item</h2>
+            <form id="create-auction-form" class="sell-form">
+                <div class="form-group">
+                    <label for="name">Item Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="startingBid">Starting Bid (₹)</label>
+                        <input type="number" id="startingBid" name="startingBid" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endTime">Auction End Time</label>
+                        <input type="datetime-local" id="endTime" name="endTime" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="imageUrl">Image URL (Optional)</label>
+                    <input type="url" id="imageUrl" name="imageUrl">
+                </div>
+                <button type="submit" class="btn-primary">Create Auction</button>
+                <p id="create-auction-message"></p>
+            </form>
+        </div>
+    </section>
+    
+    <!-- UPDATED: Footer with Contact Information -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section footer-brand">
+                <h3>GlobalAuction</h3>
+                <p>&copy; 2025 GlobalAuction. All rights reserved.</p>
+            </div>
+            <div class="footer-section footer-links">
+                <h4>Quick Links</h4>
+                <a href="#">Home</a>
+                <a href="#auctions">Auctions</a>
+                <a href="#sell">Sell</a>
+                <a href="#about">About</a>
+            </div>
+            <div class="footer-section contact-info">
+                <h4>Contact Us</h4>
+                <!-- NEW: Contact Details -->
+                <p><i class="fas fa-envelope"></i> <a href="mailto:support@globalauction.com">hariladle@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> +919523985175</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> harivans.hv</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auction Details Modal -->
+    <div id="auctionModal" class="modal">
+        <div class="modal-content">
+            <!-- Modal content will be dynamically loaded here by script.js
+                 It will include the two columns: modalBody (details) and bidLeaderboardContainer -->
+            <span class="close">&times;</span> 
+            <div class="modal-body" id="modalBody">
+                <!-- Placeholder for dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content auth-modal-content">
+            <span class="auth-close close">&times;</span>
+            <div class="auth-tabs">
+                <button class="tab-link active" data-tab="login-tab">Login</button>
+                <button class="tab-link" data-tab="register-tab">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-tab" class="tab-content active">
+                <h3>Login to Your Account</h3>
+                <form id="login-form">
+                    <input type="email" id="login-email" placeholder="Email Address" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <button type="submit" class="btn-primary">Login</button>
+                    <p id="login-message"></p>
+                </form>
+            </div>
+
+            <!-- Register Form (UPDATED with file input) -->
+            <div id="register-tab" class="tab-content">
+                <h3>Create a New Account</h3>
+                <form id="register-form">
+                    <input type="text" id="register-name" placeholder="Full Name" required>
+                    <input type="email" id="register-email" placeholder="Email Address" required>
+                    <input type="password" id="register-password" placeholder="Password" required>
+                    
+                    <!-- NEW: File Input for Profile Picture -->
+                    <label for="register-profile-file" class="file-label">Profile Picture (Optional)</label>
+                    <input type="file" id="register-profile-file" accept="image/*" class="file-input">
+                    
+                    <button type="submit" class="btn-primary">Register</button>
+                    <p id="register-message"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
